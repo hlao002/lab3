@@ -3,7 +3,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-});
+})
 
 /*
  * Function that is called when the document is ready.
@@ -17,23 +17,19 @@ function initializePage() {
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
-  $("a.thumbnail").click(projectClick);
-}
 
-function projectClick(e) {
-	e.preventDefault();
-	$(this).find(".img").fadeIn();
+    	function projectClick(e) {
+		e.preventDefault();
+		$(this).find(".img").fadeIn();
 
-	var projectTitle = $(this).find("p").text();
-	var jumbotronHeader = $(".jumbotron h1");
-	jumbotronHeader.text(projectTitle);
-
-	var containingProject = $(this).closest(".project");
-	var description = $(containingProject).find(".project-description");
-	if (description.length == 0) {
-		$(containingProject).append("<div class="project-description'><p>Description of the project.</p></div>");
-	} else {
-	  description.fadeOut();
+		var containingProject = $(this).closest(".project");
+		var description = $(containingProject).find(".project-description");
+		if (description.length == 0) {
+			$(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
+		} else {
+		  description.fadeOut();
+		}
 	}
+	$("a.thumbnail").click(projectClick);
 
 }
