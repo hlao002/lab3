@@ -3,7 +3,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-})
+});
 
 /*
  * Function that is called when the document is ready.
@@ -17,11 +17,12 @@ function initializePage() {
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+  $("a.thumbnail").click(projectClick);
 }
 
 function projectClick(e) {
 	e.preventDefault();
-	$(this).find("img).fadeIn();
+	$(this).find(".img").fadeIn();
 
 	var projectTitle = $(this).find("p").text();
 	var jumbotronHeader = $(".jumbotron h1");
